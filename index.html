@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>TOEFL Expert 12 Minggu</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={darkMode:'class'}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#0f172a}.dark body{background:#0f172a;color:#e2e8f0}</style></head>
+<body class="min-h-screen"><div class="max-w-4xl mx-auto p-3 sm:p-5">
+<header class="flex items-center justify-between mb-3"><h1 class="text-xl font-bold text-amber-500">TOEFL Expert · 12 Minggu</h1><button onclick="S.dark=!S.dark;save();render()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700" aria-label="Mode"><i data-lucide="moon"></i></button></header>
+<div id="bar" class="flex flex-wrap gap-2 mb-3"></div><nav id="nav" class="flex gap-1 overflow-x-auto mb-4"></nav><main id="main"></main></div>
+<script>
+const VD=`ubiquitous|adj|/juːˈbɪkwɪtəs/|ada di mana-mana|omnipresent|Smartphones have become ubiquitous in modern society.
+ambiguous|adj|/æmˈbɪɡjuəs/|ambigu, taksa|unclear|The results of the study were ambiguous.
+mitigate|v|/ˈmɪtɪɡeɪt/|mengurangi dampak|alleviate|Governments must mitigate the effects of climate change.
+substantiate|v|/səbˈstænʃieɪt/|membuktikan|verify|She could not substantiate her claims with evidence.
+paradigm|n|/ˈpærədaɪm/|kerangka pola pikir|model|The discovery shifted the scientific paradigm.
+inherent|adj|/ɪnˈhɪrənt/|melekat|intrinsic|There are inherent risks in any investment.
+alleviate|v|/əˈliːvieɪt/|meringankan|relieve|The new policy aims to alleviate poverty.
+comprehensive|adj|/ˌkɒmprɪˈhensɪv/|menyeluruh|thorough|The committee produced a comprehensive report.
+diminish|v|/dɪˈmɪnɪʃ/|berkurang|decrease|Interest in the topic began to diminish.
+fluctuate|v|/ˈflʌktʃueɪt/|naik turun|vary|Prices fluctuate according to demand.
+hypothesis|n|/haɪˈpɒθəsɪs/|hipotesis|theory|The experiment tested the original hypothesis.
+scrutinize|v|/ˈskruːtənaɪz/|memeriksa teliti|examine|Auditors scrutinize every financial record.
+resilient|adj|/rɪˈzɪliənt/|tangguh|robust|Coastal communities must become more resilient.
+advocate|v|/ˈædvəkeɪt/|menganjurkan|champion|Experts advocate a balanced diet.
+coherent|adj|/koʊˈhɪrənt/|runtut|logical|The author presents a coherent argument.
+deteriorate|v|/dɪˈtɪriəreɪt/|memburuk|worsen|Air quality continued to deteriorate.
+elaborate|v|/ɪˈlæbəreɪt/|menguraikan|expand|Could you elaborate on your second point?
+feasible|adj|/ˈfiːzəbl/|layak dilakukan|viable|The plan is technically feasible.
+meticulous|adj|/məˈtɪkjələs/|sangat teliti|careful|He kept meticulous records.
+pragmatic|adj|/præɡˈmætɪk/|pragmatis|practical|They took a pragmatic approach.
+reluctant|adj|/rɪˈlʌktənt/|enggan|unwilling|Investors were reluctant to commit funds.
+sustain|v|/səˈsteɪn/|menopang|maintain|Forests sustain a wide range of species.
+volatile|adj|/ˈvɒlətaɪl/|bergejolak|unstable|The market remained volatile.
+nuance|n|/ˈnuːɑːns/|nuansa|subtlety|Translation often loses nuance.`;
+const XD=`pervasive, universal|Ponsel pintar kini ada di mana-mana dalam masyarakat modern.|Sering untuk teknologi atau fenomena yang sangat umum.
+vague, equivocal|Hasil penelitian itu ambigu.|Maknanya bisa ditafsirkan lebih dari satu cara.
+reduce, lessen|Pemerintah harus mengurangi dampak perubahan iklim.|Biasanya dengan objek risiko atau dampak negatif.
+corroborate, validate|Dia tidak dapat membuktikan klaimnya dengan bukti.|Bukan sekadar menyatakan, tetapi menunjukkan bukti.
+framework, archetype|Penemuan itu menggeser paradigma ilmiah.|Sering muncul di teks sains dan filsafat.
+innate, built-in|Setiap investasi memiliki risiko yang melekat.|Sifat yang tidak dapat dipisahkan dari sesuatu.
+ease, mitigate|Kebijakan baru ini bertujuan meringankan kemiskinan.|Untuk penderitaan, masalah, atau rasa sakit.
+extensive, all-inclusive|Komite menyusun laporan yang menyeluruh.|Mencakup semua aspek penting.
+dwindle, lessen|Minat pada topik itu mulai berkurang.|Bisa transitif maupun intransitif.
+oscillate, waver|Harga naik turun sesuai permintaan.|Perubahan tidak tetap, naik dan turun.
+premise, conjecture|Eksperimen itu menguji hipotesis awal.|Bentuk jamak: hypotheses.
+inspect, analyze|Auditor memeriksa setiap catatan keuangan dengan teliti.|Pemeriksaan sangat detail dan kritis.
+adaptable, tough|Komunitas pesisir harus menjadi lebih tangguh.|Mampu pulih dari kesulitan.
+recommend, endorse|Para pakar menganjurkan pola makan seimbang.|Sebagai kata benda (n) berarti pendukung.
+consistent, lucid|Penulis menyajikan argumen yang runtut.|Bagian-bagiannya saling terkait secara logis.
+decline, degrade|Kualitas udara terus memburuk.|Perlahan menjadi lebih buruk.
+detail, clarify|Bisakah Anda menguraikan poin kedua Anda?|Sebagai adjektiva berarti rumit.
+workable, achievable|Rencana itu layak dilakukan secara teknis.|Untuk rencana atau gagasan.
+thorough, painstaking|Dia menyimpan catatan yang sangat teliti.|Sangat memperhatikan detail.
+realistic, sensible|Mereka mengambil pendekatan pragmatis.|Berorientasi pada hasil nyata.
+hesitant, averse|Para investor enggan menanamkan dana.|Biasanya diikuti to + verba.
+support, uphold|Hutan menopang beragam spesies.|Juga berarti menderita (sustain an injury).
+erratic, fluctuating|Pasar tetap bergejolak.|Cepat berubah dan sulit diprediksi.
+subtlety, shade|Terjemahan sering kehilangan nuansa.|Perbedaan makna yang halus.`.split('\n');
+const V=VD.split('\n').map((l,id)=>{const[w,p,i,a,s,e]=l.split('|'),[y,t,n]=XD[id].split('|');return{id,w,p,i,a,s:s+', '+y,e,t,n}});
+const WID=['Esai opini: Apakah Anda setuju bahwa kerja jarak jauh lebih produktif daripada kerja di kantor? Dukung posisi Anda.','Email profesional: Tulis kepada atasan untuk mengusulkan kebijakan keamanan data baru dan jelaskan alasannya.','Integrated/laporan: Ringkas keuntungan dan risiko otomatisasi di tempat kerja.'];
+const spa=(t,l)=>`<button onclick="say(this.dataset.t,'${l}')" data-t="${t}" class="px-2 py-1 mx-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-amber-500 text-xs">${l.slice(3)}</button>`;
+const vcard=x=>`<div class="text-2xl font-bold text-emerald-500">${x.a}</div>${x.n?`<div class="text-xs text-amber-500">${x.n}</div>`:''}<div class="text-sm">Sinonim: <b>${x.s}</b></div><div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-sm space-y-1"><div class="italic">${x.e} ${spa(x.e,'en-US')}${spa(x.e,'en-GB')}</div><div class="opacity-80">${x.t}</div></div>`;
+let SQ=null;
+function sqNew(){const x=shuf(V)[0],o=shuf([...new Set([x.a,...shuf(V.filter(v=>v.a!=x.a)).slice(0,3).map(v=>v.a)])]);return{x,o,c:o.indexOf(x.a)}}
+function sqStart(){SQ={left:60,ok:0,n:0,q:sqNew()};clearInterval(tm);tm=setInterval(()=>{SQ.left--;const e=$('#sq');if(e)e.textContent=SQ.left;if(SQ.left<=0){clearInterval(tm);SQ.done=1;hit();render()}},1000);render()}
+function sqAns(i){if(SQ.done)return;SQ.n++;const ok=i==SQ.q.c;if(ok){SQ.ok++;S.st[SQ.q.x.id]=S.st[SQ.q.x.id]||'ragu'}pil('v',ok);SQ.q=sqNew();render()}
+function speedView(){if(!SQ)return`<div class="${C} text-center space-y-3"><h2 class="font-bold text-lg">Speed Quiz</h2><p class="text-sm">Jawab arti kata sebanyak mungkin dalam 60 detik.</p><button class="${B}" onclick="sqStart()">Mulai</button></div>`;
+if(SQ.done)return`<div class="${C} text-center space-y-3"><div class="text-5xl font-bold text-amber-500">${SQ.ok}</div><p>benar dari ${SQ.n} soal dalam 60 detik</p><button class="${B}" onclick="sqStart()">Ulangi</button></div>`;
+return`<div class="${C} space-y-3"><div class="flex justify-between text-sm"><span>Benar: ${SQ.ok}/${SQ.n}</span><span class="font-mono"><span id="sq">${SQ.left}</span>s</span></div><div class="text-4xl font-bold text-amber-500 text-center">${SQ.q.x.w}</div>${opts({o:SQ.q.o,c:SQ.q.c},null,'sqAns')}</div>`}
+const G=[
+{q:'___ the economy improved, unemployment fell.',o:['As','Because of','Despite','Due to'],c:0,r:'Klausa butuh konjungsi (as/because). Because of, despite, due to adalah preposisi dan harus diikuti frasa nomina.'},
+{q:'Never ___ such a complex experiment.',o:['she had seen','had she seen','she has seen','seen she'],c:1,r:'Kata negatif di awal kalimat memicu inversi: Never + auxiliary + subject.'},
+{q:'If the committee ___ earlier, the error would have been caught.',o:['had met','met','would meet','meets'],c:0,r:'Conditional tipe 3: if + past perfect, would have + V3.'},
+{q:'The number of applicants ___ increased.',o:['has','have','are','were'],c:0,r:'The number of + plural noun memakai verba tunggal (a number of memakai jamak).'},
+{q:'The research (A) have shown that (B) sleep deprivation (C) impairs (D) memory.',o:['A','B','C','D'],c:0,r:'Research tidak dapat dihitung dan bersifat tunggal, maka has shown.'},
+{q:'She suggested that he (A) takes (B) a break (C) before (D) the meeting.',o:['A','B','C','D'],c:0,r:'Subjunctive setelah suggest/recommend/insist memakai bentuk dasar verba: he take.'},
+{q:'Not only (A) the data was incomplete, but (B) it was also (C) outdated (D) by two years.',o:['A','B','C','D'],c:0,r:'Not only di awal memicu inversi: Not only was the data incomplete.'}];
+const R={t:'Urbanization has reshaped how societies allocate resources. As populations concentrate in cities, demand for housing, transport, and energy rises sharply. Planners therefore advocate compact, mixed-use districts, which reduce commuting distances and sustain local economies. Critics, however, argue that density alone cannot mitigate inequality unless affordable housing is guaranteed.',qs:[{q:'What is the main idea of the passage?',o:['Cities should stop growing','Compact planning is promoted, but its benefits depend on affordability','Commuting is the only urban problem','Energy demand is falling'],c:1,r:'Paragraf menyajikan solusi dan keberatan kritikus soal keterjangkauan.'},{q:'The word "advocate" is closest in meaning to:',o:['oppose','support','ignore','delay'],c:1,r:'Advocate = mendukung atau menganjurkan.'}]};
+const PR=['Some people prefer to work in teams, while others prefer to work alone. Which do you prefer, and why?','Do you agree or disagree: universities should require every student to study a foreign language? Use reasons and examples.','Describe a technological change that has improved professional life, and explain its impact.'];
+const WP=['Opinion essay: Do you agree that remote work is more productive than office work? Support your position.','Professional email: Write to your manager proposing a new data-security policy and justify it.','Integrated/report: Summarize the advantages and risks of automation in the workplace.'];
+const RP=['Interviewer: Tell me about a time you solved a difficult technical problem.','Debate partner: I believe artificial intelligence will reduce, not create, jobs. Convince me otherwise.','Colleague: Our project is delayed. How should we explain this to the international client?'];
+const TRW=['however','moreover','furthermore','therefore','consequently','nevertheless','in addition','for instance','for example','in contrast','on the other hand','as a result','in conclusion','although','whereas'];
+const ADV=new Set([...V.map(v=>v.w),'substantial','crucial','implement','nevertheless','moreover','consequently','perspective','significant','enhance','inevitable','compelling','comprehensive']);
+const $=s=>document.querySelector(s),C='bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700',B='px-4 py-2 rounded-xl font-semibold bg-emerald-600 text-white hover:bg-emerald-500',BG='px-4 py-2 rounded-xl font-semibold bg-amber-500 text-slate-900';
+let S=load(),tab='dash',ci=0,flip=false,gi=0,ga=null,E=null,SP={},WT='',WS=null,tm=null,rec=null,wtm=null;
+function load(){const b={act:{},dn:{},st:{},ex:{},pil:{v:[0,0],g:[0,0],s:[0,0],w:[0,0]},w:1,d:1,ses:0,vf:'all',acc:'en-US',dark:true};try{return Object.assign(b,JSON.parse(localStorage.getItem('toefl')||'{}'))}catch(e){return b}}
+function save(){try{localStorage.setItem('toefl',JSON.stringify(S))}catch(e){}}
+const today=()=>new Date().toISOString().slice(0,10),shuf=a=>[...a].sort(()=>Math.random()-.5),fmt=s=>Math.floor(s/60)+':'+String(Math.max(0,s%60)).padStart(2,'0');
+const hit=()=>{S.act[today()]=(S.act[today()]||0)+1;save()};
+const pil=(k,ok)=>{S.pil[k][0]+=ok?1:0;S.pil[k][1]++;save()},pilS=(k,s,m)=>{S.pil[k][0]+=s;S.pil[k][1]+=m;save()};
+function say(t,l){if(!('speechSynthesis' in window)){alert('Audio tidak didukung browser ini.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l||S.acc;u.rate=.95;speechSynthesis.speak(u)}
+const spb=(t)=>`<button onclick="say(this.dataset.t)" data-t="${t.replace(/"/g,'&quot;')}" class="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-amber-500" aria-label="Audio"><i data-lucide="volume-2"></i></button>`;
+function opts(q,a,fn){return`<div class="grid gap-2">${q.o.map((o,i)=>{let c='border-slate-300 dark:border-slate-600';if(a!=null){if(i==q.c)c='border-emerald-500 bg-emerald-500/20';else if(i==a)c='border-red-500 bg-red-500/20'}return`<button onclick="${fn}(${i})" class="text-left p-3 rounded-xl border-2 ${c}">${o}</button>`}).join('')}</div>`}
+/* VOCAB */
+const dayWords=()=>{const k=((S.w-1)*5+S.d-1)*100+S.ses*25;return V.slice(k,k+25)};
+function vocabView(){let ws=dayWords().filter(x=>S.vf=='all'||(S.st[x.id]||'belum')==S.vf);const nDone=S.dn[today()]||0;
+const head=`<div class="${C} mb-3"><div class="flex justify-between text-sm"><span>Target harian: ${nDone}/100 kata</span><span>Sesi ${S.ses+1}/4 (25 kata)</span></div><div class="h-2 rounded bg-slate-200 dark:bg-slate-700 mt-2"><div class="h-2 rounded bg-emerald-500" style="width:${Math.min(nDone,100)}%"></div></div><div class="flex gap-2 mt-3 flex-wrap">${[0,1,2,3].map(i=>`<button onclick="S.ses=${i};ci=0;flip=false;render()" class="px-3 py-1 rounded-lg text-sm ${S.ses==i?'bg-amber-500 text-slate-900':'bg-slate-200 dark:bg-slate-700'}">Sesi ${i+1}</button>`).join('')}<button onclick="S.hide=!S.hide;flip=false;save();render()" class="px-3 py-1 rounded-lg text-sm bg-slate-200 dark:bg-slate-700">${S.hide?'Tampilkan Arti':'Sembunyikan Arti'}</button><select onchange="S.vf=this.value;ci=0;render()" class="p-1 rounded-lg border bg-white dark:bg-slate-800 text-sm">${[['all','Semua'],['belum','Belum Hafal'],['ragu','Ragu'],['kuasai','Dikuasai']].map(o=>`<option value="${o[0]}" ${S.vf==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select></div></div>`;
+if(!ws.length)return head+`<div class="${C}">Tidak ada kata untuk sesi/filter ini. Kosakata terisi baru di Minggu 1 Hari 1 sesi 1. Sabtu: pakai filter Ragu atau Belum Hafal untuk Active Recall.</div>`;
+ci=Math.min(ci,ws.length-1);const x=ws[ci];
+return head+`<div class="${C} text-center space-y-3"><p class="text-xs">Kartu ${ci+1}/${ws.length} · ${S.st[x.id]||'belum'}</p><div class="text-4xl font-bold text-amber-500" onclick="flip=!flip;render()">${x.w}</div><div class="text-sm">${x.p} · ${x.i} ${spa(x.w,'en-US')}${spa(x.w,'en-GB')}</div>${S.hide&&!flip?'<p class="text-sm opacity-60">Mode uji: ketuk kata untuk melihat arti</p>':vcard(x)}<div class="flex gap-2 justify-center flex-wrap">${[['belum','Belum Hafal'],['ragu','Ragu'],['kuasai','Dikuasai']].map(b=>`<button class="px-3 py-2 rounded-xl border-2 border-amber-500" onclick="mark(${x.id},'${b[0]}')">${b[1]}</button>`).join('')}</div><div class="flex gap-2 justify-center"><button class="${B}" onclick="ci=Math.max(0,ci-1);flip=false;render()">Sebelumnya</button><button class="${B}" onclick="ci=Math.min(${ws.length-1},ci+1);flip=false;render()">Berikutnya</button></div></div>`}
+function mark(id,s){S.st[id]=s;S.dn[today()]=(S.dn[today()]||0)+1;hit();pil('v',s=='kuasai');ci++;flip=false;render()}
+/* GRAMMAR */
+function gramView(){const q=G[gi];return`<details class="${C} mb-3 text-sm"><summary class="font-semibold cursor-pointer">Materi ringkas grammar TOEFL</summary><ul class="list-disc ml-5 mt-2 space-y-1"><li>Setiap klausa wajib punya subjek dan verba; preposisi (despite, due to) diikuti frasa nomina, konjungsi (although, because) diikuti klausa.</li><li>Kata negatif di awal kalimat (never, not only, hardly) memicu inversi: auxiliary sebelum subjek.</li><li>Conditional tipe 3: if + past perfect, would have + V3. Subjunctive setelah suggest atau insist memakai bentuk dasar verba.</li><li>Subject-verb agreement: the number of memakai verba tunggal; uncountable noun (research, information) bersifat tunggal.</li></ul></details><div class="${C} space-y-3"><p class="text-xs">${gi<4?'Structure':'Written Expression'} · soal ${gi+1}/${G.length}</p><p class="text-lg">${q.q}</p>${opts(q,ga,'gAns')}${ga!=null?`<div class="p-3 rounded-xl bg-amber-500/20 text-sm"><b>Aturan:</b> ${q.r}</div><button class="${B}" onclick="gi=(gi+1)%G.length;ga=null;render()">Soal berikutnya</button>`:''}</div>`}
+function gAns(i){if(ga!=null)return;ga=i;pil('g',i==G[gi].c);hit();render()}
+/* SPEAKING */
+function recStart(){const Rc=window.SpeechRecognition||window.webkitSpeechRecognition;if(!Rc){alert('SpeechRecognition tidak didukung. Gunakan Chrome atau Edge.');return false}
+rec=new Rc();rec.lang=S.acc;rec.continuous=true;rec.interimResults=true;SP.tr='';SP.t0=Date.now();SP.rec=true;SP.res=null;
+rec.onresult=e=>{let t='';for(const r of e.results)t+=r[0].transcript+' ';SP.tr=t.trim();const el=$('#tr');if(el)el.textContent=SP.tr};
+rec.onend=()=>{if(SP.rec){try{rec.start()}catch(x){}}};rec.onerror=()=>{};try{rec.start()}catch(x){}return true}
+function recStop(){if(!SP.rec)return;SP.rec=false;try{rec.stop()}catch(e){}clearInterval(tm);SP.sec=Math.max(1,(Date.now()-SP.t0)/1000);evalSp();render()}
+function evalSp(){const w=(SP.tr||'').toLowerCase().match(/[a-z']+/g)||[],n=w.length,wpm=Math.round(n/(SP.sec/60)),adv=[...new Set(w.filter(x=>ADV.has(x)))];
+const sc=Math.round(Math.min(wpm,140)/140*10+Math.min(adv.length,5)*2+Math.min(n,100)/100*10),tips=[];
+if(n<20)tips.push('Transkrip terlalu pendek. Kembangkan jawaban dengan alasan dan contoh.');if(wpm<110&&n>=20)tips.push('Kecepatan terlalu lambat. Target 120-150 WPM.');if(wpm>170)tips.push('Terlalu cepat. Perlambat agar jelas.');
+if(adv.length<2)tips.push('Tambahkan kosakata C1 (mis. substantial, mitigate, pragmatic).');if(!TRW.some(t=>SP.tr.toLowerCase().includes(t)))tips.push('Gunakan penghubung seperti however, for instance, as a result.');if(!tips.length)tips.push('Struktur dan kosakata sudah baik. Pertahankan.');
+SP.res={n,wpm,adv,sc,tips};pilS('s',sc,30);hit()}
+function startInd(){if(!recStart())return;recStop.call&&0;SP.rec=false;try{rec.stop()}catch(e){}SP.phase='prep';SP.left=15;render();tm=setInterval(()=>{SP.left--;const e=$('#sl');if(e)e.textContent=SP.left;if(SP.left>0)return;if(SP.phase=='prep'){SP.phase='talk';SP.left=45;recStart();render()}else recStop()},1000)}
+function speakView(){const m=SP.mode||'ind',p=SP.p||0,L=m=='ind'?PR:RP;
+let h=`<div class="${C} space-y-3"><div class="flex gap-2 flex-wrap"><button class="px-3 py-1 rounded-lg ${m=='ind'?'bg-amber-500 text-slate-900':'bg-slate-200 dark:bg-slate-700'}" onclick="SP={mode:'ind'};render()">TOEFL Independent</button><button class="px-3 py-1 rounded-lg ${m=='free'?'bg-amber-500 text-slate-900':'bg-slate-200 dark:bg-slate-700'}" onclick="SP={mode:'free'};render()">Free Conversation</button><select onchange="S.acc=this.value;save()" class="p-1 rounded-lg border bg-white dark:bg-slate-800"><option ${S.acc=='en-US'?'selected':''}>en-US</option><option ${S.acc=='en-GB'?'selected':''}>en-GB</option></select></div>
+<select onchange="SP.p=+this.value;SP.res=null;SP.tr='';render()" class="w-full p-2 rounded-lg border bg-white dark:bg-slate-800">${L.map((t,i)=>`<option value="${i}" ${p==i?'selected':''}>${t.slice(0,70)}</option>`).join('')}</select><p>${L[p]} ${spb(L[p])}</p>`;
+if(SP.phase&&!SP.res)h+=`<p class="text-2xl font-bold text-emerald-500">${SP.phase=='prep'?'Persiapan':'Bicara'}: <span id="sl">${SP.left}</span>s</p>`;
+h+=m=='ind'?(SP.phase&&!SP.res?`<button class="${BG}" onclick="recStop()">Selesai</button>`:`<button class="${B}" onclick="SP.phase=0;startInd()">Mulai (15s prep, 45s bicara)</button>`):(SP.rec?`<button class="${BG}" onclick="recStop()">Stop & Evaluasi</button>`:`<button class="${B}" onclick="recStart()&&render()">Mulai Bicara</button>`);
+h+=`<div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 min-h-[3rem] text-sm" id="tr">${SP.tr||'Transkrip muncul di sini'}</div>`;
+if(SP.res){const r=SP.res;h+=`<div class="p-3 rounded-xl bg-emerald-500/20 text-sm space-y-1"><b>Estimasi skor ${r.sc}/30</b> · ${r.n} kata · ${r.wpm} WPM · kata C1: ${r.adv.join(', ')||'-'}<ul class="list-disc ml-5">${r.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>`}return h+'</div>'}
+/* WRITING */
+const wcount=t=>(t.match(/[A-Za-z']+/g)||[]).length;
+function wtick(){const e=$('#wt');if(e&&WS!=null)e.textContent=fmt(WS)}
+function analyze(){const t=WT,w=(t.toLowerCase().match(/[a-z']+/g)||[]),n=w.length,sn=(t.match(/[^.!?]+[.!?]*/g)||[]).filter(s=>s.trim()).length||1,al=n/sn,ttr=n?new Set(w).size/n:0,tr=TRW.filter(x=>t.toLowerCase().includes(x)),pg=t.split(/\n\s*\n/).filter(x=>x.trim()).length,adv=[...new Set(w.filter(x=>ADV.has(x)))];
+const sc=Math.min(30,Math.round(Math.min(n/300,1)*8+Math.min(tr.length,6)/6*6+Math.min(ttr/0.6,1)*5+(al>=14&&al<=28?5:2)+Math.min(pg,3)*1+Math.min(adv.length,3)));
+const tips=[];if(n<250)tips.push('Panjang esai kurang. Target 300+ kata.');if(tr.length<4)tips.push('Tambahkan transition words akademik.');if(ttr<.5)tips.push('Variasikan kosakata, kurangi pengulangan.');if(al<14)tips.push('Kalimat terlalu pendek, gabungkan dengan klausa.');if(al>28)tips.push('Kalimat terlalu panjang, pecah agar jelas.');if(pg<3)tips.push('Gunakan minimal 3 paragraf: intro, body, kesimpulan.');if(!tips.length)tips.push('Kualitas bagus. Pertahankan struktur ini.');
+WS=null;clearInterval(wtm);pilS('w',sc,30);hit();SP.wr={n,sn,al:al.toFixed(1),ttr:ttr.toFixed(2),tr,sc,tips,adv};render()}
+function writeView(){const p=SP.wp||0,r=SP.wr;return`<div class="${C} space-y-3"><select onchange="SP.wp=+this.value;render()" class="w-full p-2 rounded-lg border bg-white dark:bg-slate-800">${WP.map((t,i)=>`<option value="${i}" ${p==i?'selected':''}>${t.slice(0,60)}</option>`).join('')}</select><p>${WP[p]}</p><p class="text-sm opacity-80">${WID[p]}</p><textarea id="wta" rows="10" class="w-full p-3 rounded-xl border bg-white dark:bg-slate-900" oninput="WT=this.value;$('#wc').textContent=wcount(WT)">${WT}</textarea><div class="flex flex-wrap gap-3 items-center text-sm"><span>Kata: <b id="wc">${wcount(WT)}</b></span><span>Timer: <b id="wt">${WS!=null?fmt(WS):'-'}</b></span><button class="${B}" onclick="WS=1800;clearInterval(wtm);wtm=setInterval(()=>{WS--;wtick();if(WS<=0)analyze()},1000);render()">Mulai 30 menit</button><button class="${BG}" onclick="analyze()">Analisis</button></div>${r?`<div class="p-3 rounded-xl bg-emerald-500/20 text-sm space-y-1"><b>Estimasi skor ${r.sc}/30</b><br>${r.n} kata · ${r.sn} kalimat · rata-rata ${r.al} kata/kalimat · variasi kosakata ${r.ttr}<br>Transisi: ${r.tr.join(', ')||'-'} · Kata C1: ${r.adv.join(', ')||'-'}<ul class="list-disc ml-5">${r.tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>`:''}</div>`}
+/* EXAM */
+function startExam(){const vq=shuf(V).slice(0,6).map(x=>{const o=shuf([...new Set([x.s,...shuf(V.filter(v=>v.s!=x.s)).slice(0,3).map(v=>v.s)])]);return{sec:'L',q:'Listen and choose the closest synonym.',aud:x.w,o,c:o.indexOf(x.s),r:`${x.w} = ${x.s} (${x.a})`}});
+const gq=G.map(q=>({...q,sec:'S'})),rq=R.qs.map(q=>({...q,sec:'R',q:q.q,pass:R.t}));E={qs:[...vq,...gq,...rq],i:0,a:null,res:[],left:45*60,done:null};clearInterval(tm);tm=setInterval(()=>{E.left--;const e=$('#et');if(e)e.textContent=fmt(E.left);if(E.left<=0)endExam()},1000);render();if(vq[0])say(vq[0].aud)}
+function eAns(i){if(E.a!=null)return;E.a=i;const q=E.qs[E.i];E.res.push({sec:q.sec,ok:i==q.c});if(q.sec!='R')pil(q.sec=='L'?'v':'g',i==q.c);hit();render()}
+function eNext(){E.i++;E.a=null;if(E.i>=E.qs.length)endExam();else{render();const q=E.qs[E.i];if(q.aud)say(q.aud)}}
+function endExam(){clearInterval(tm);if(E.done)return;const n=E.qs.length,ok=E.res.filter(r=>r.ok).length,pct=Math.round(ok/n*100),by={};['L','S','R'].forEach(s=>{const a=E.res.filter(r=>r.sec==s);by[s]=a.length?Math.round(a.filter(r=>r.ok).length/a.length*100):0});
+E.done={pct,ibt:Math.round(pct*1.2),itp:Math.round(310+pct/100*367),by};S.ex[S.w]=E.done;save();render()}
+function examView(){if(!E)return`<div class="${C} text-center space-y-3"><h2 class="font-bold text-lg">Weekly TOEFL Mock Exam: Minggu ${S.w}</h2><p class="text-sm">3 section: Listening & Vocabulary, Structure & Written Expression, Reading. Waktu 45 menit. Writing mini-task dikerjakan di Writing Studio.</p><button class="${B}" onclick="startExam()">Mulai Ujian</button></div>`;
+if(E.done){const d=E.done;return`<div class="${C} space-y-3 text-center"><div class="text-5xl font-bold text-amber-500">${d.ibt}<span class="text-lg">/120 iBT</span></div><p>Konversi ITP: <b>${d.itp}</b> (310-677) · Akurasi ${d.pct}%</p><p class="text-sm">Listening/Vocab ${d.by.L}% · Structure ${d.by.S}% · Reading ${d.by.R}%</p><p class="font-semibold ${d.ibt>=100?'text-emerald-500':'text-amber-500'}">${d.ibt>=100?'Level Expert tercapai (iBT 100+)':'Target Expert: iBT 100+ / ITP 600+'}</p><button class="${B}" onclick="E=null;render()">Selesai</button></div>`}
+const q=E.qs[E.i];return`<div class="${C} space-y-3"><div class="flex justify-between text-sm"><span>Soal ${E.i+1}/${E.qs.length}</span><span class="font-mono" id="et">${fmt(E.left)}</span></div>${q.pass?`<div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-sm">${q.pass}</div>`:''}${q.aud?spb(q.aud):''}<p class="text-lg">${q.q}</p>${opts(q,E.a,'eAns')}${E.a!=null?`<div class="p-3 rounded-xl bg-amber-500/20 text-sm">${q.r}</div><button class="${B}" onclick="eNext()">${E.i+1>=E.qs.length?'Lihat Skor':'Lanjut'}</button>`:''}</div>`}
+/* DASHBOARD */
+function streak(){let n=0,d=new Date();if(!S.act[today()])d.setDate(d.getDate()-1);while(S.act[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
+function dashView(){const l=S.ex[S.w],last=Object.keys(S.ex).map(Number).sort((a,b)=>b-a)[0],le=S.ex[last],nD=S.dn[today()]||0;
+const cells=[...Array(84)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-83+i);const k=d.toISOString().slice(0,10),n=S.act[k]||0;return`<div title="${k}: ${n}" class="w-3.5 h-3.5 rounded-sm ${n==0?'bg-slate-200 dark:bg-slate-700':n<10?'bg-emerald-300':n<40?'bg-emerald-500':'bg-amber-400'}"></div>`}).join('');
+const bars=[...Array(12)].map((_,i)=>{const s=S.ex[i+1]?.ibt;return`<div class="flex-1 text-center text-[10px] ${i%4==0?'border-l border-slate-400 pl-0.5':''}"><div class="h-28 flex items-end"><div class="w-full rounded-t bg-emerald-500" style="height:${(s||0)/1.2}%"></div></div>M${i+1}<br>${s??'-'}</div>`}).join('');
+const pb=[['v','Vocabulary'],['g','Grammar'],['s','Speaking'],['w','Writing']].map(([k,n])=>{const p=S.pil[k][1]?Math.round(S.pil[k][0]/S.pil[k][1]*100):0;return`<div><div class="flex justify-between text-sm"><span>${n}</span><span>${p}%</span></div><div class="h-2 rounded bg-slate-200 dark:bg-slate-700"><div class="h-2 rounded ${p<60?'bg-amber-400':'bg-emerald-500'}" style="width:${p}%"></div></div></div>`}).join('');
+return`<div class="space-y-3"><div class="grid grid-cols-3 gap-2 text-center">${[['Kata hari ini',nD+'/100'],['Streak',streak()+' hari'],['Estimasi iBT / ITP',le?le.ibt+' / '+le.itp:'-']].map(a=>`<div class="${C}"><div class="text-lg font-bold text-amber-500">${a[1]}</div><div class="text-xs">${a[0]}</div></div>`).join('')}</div>
+<div class="${C}"><h3 class="font-bold mb-2">Aktivitas 12 minggu</h3><div class="overflow-x-auto"><div class="grid grid-rows-7 grid-flow-col gap-1 w-max">${cells}</div></div></div>
+<div class="${C}"><h3 class="font-bold mb-2">Tren estimasi iBT (Bulan 1: M1-4, Bulan 2: M5-8, Bulan 3: M9-12)</h3><div class="flex gap-1">${bars}</div></div>
+<div class="${C} space-y-2"><h3 class="font-bold">Breakdown pilar</h3>${pb}</div>
+<div class="${C} space-y-2"><h3 class="font-bold">Export / Import Progres</h3><textarea id="jx" rows="3" class="w-full p-2 text-xs rounded-lg border bg-white dark:bg-slate-900"></textarea><div class="flex gap-2"><button class="${B}" onclick="$('#jx').value=JSON.stringify(S);$('#jx').select();try{navigator.clipboard.writeText($('#jx').value)}catch(e){}">Export (salin)</button><button class="${BG}" onclick="try{S=Object.assign(S,JSON.parse($('#jx').value));save();render()}catch(e){alert('JSON tidak valid')}">Import</button></div></div></div>`}
+const T=[['dash','Dashboard TOEFL'],['vocab','100 Kata Harian'],['speed','Speed Quiz'],['gram','Grammar Lab'],['speak','Speaking Partner'],['write','Writing Studio'],['exam','Weekend Exam']];
+function setTab(t){tab=t;SQ=null;clearInterval(tm);if(SP.rec){SP.rec=false;try{rec.stop()}catch(e){}}render()}
+function render(){document.documentElement.classList.toggle('dark',S.dark);
+$('#bar').innerHTML=`<select class="p-2 rounded-lg border bg-white dark:bg-slate-800" onchange="S.w=+this.value;ci=0;save();render()">${[...Array(12)].map((_,i)=>`<option value="${i+1}" ${S.w==i+1?'selected':''}>Minggu ${i+1} (Bulan ${Math.ceil((i+1)/4)})</option>`).join('')}</select><select class="p-2 rounded-lg border bg-white dark:bg-slate-800" onchange="S.d=+this.value;ci=0;save();render()">${['Senin','Selasa','Rabu','Kamis','Jumat'].map((t,i)=>`<option value="${i+1}" ${S.d==i+1?'selected':''}>${t}</option>`).join('')}</select>`;
+$('#nav').innerHTML=T.map(t=>`<button onclick="setTab('${t[0]}')" class="px-3 py-2 rounded-lg whitespace-nowrap text-sm font-semibold ${tab==t[0]?'bg-amber-500 text-slate-900':'bg-slate-200 dark:bg-slate-700'}">${t[1]}</button>`).join('');
+$('#main').innerHTML=({dash:dashView,vocab:vocabView,speed:speedView,gram:gramView,speak:speakView,write:writeView,exam:examView})[tab]();lucide.createIcons()}
+render();
+</script></body></html>
